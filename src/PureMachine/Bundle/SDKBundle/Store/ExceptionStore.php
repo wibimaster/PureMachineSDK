@@ -63,6 +63,12 @@ class ExceptionStore extends Base\BaseStore
      */
     protected $messages = array();
 
+    /**
+     * @Store\Property(description="detailled message if any")
+     * @Assert\Type("boolean")
+     */
+    protected $keepError = false;
+
     public function addMessage($key, $value)
     {
         $this->messages[$key] = $value;

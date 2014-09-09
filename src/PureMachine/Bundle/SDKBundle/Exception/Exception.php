@@ -108,4 +108,17 @@ class Exception extends \Exception
 
         return $exceptionStore;
     }
+
+    public function getKeepError()
+    {
+        return $this->exceptionStore->getKeepError();
+    }
+
+    public function setKeepError($value)
+    {
+        return $this->exceptionStore->setKeepError($value);
+
+        return $this;
+    }
+
 }

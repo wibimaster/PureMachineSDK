@@ -377,7 +377,7 @@ class WebServiceClient
          * If we are in production environement, we remove the stack trace
          * and detailled error messages
          */
-        if (!$this->isSymfony() || ( $this->symfonyContainer && $this->symfonyContainer->get('kernel')->getEnvironment() == 'prod')) {
+        if (!$data->getKeepError() && ( !$this->isSymfony() || ( $this->symfonyContainer && $this->symfonyContainer->get('kernel')->getEnvironment() == 'prod'))) {
             $data->setStack(array());
             $data->setMessages(array());
         }
